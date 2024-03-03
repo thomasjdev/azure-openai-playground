@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "azure-openai-playground"
+version = "0.1.0"
+description = ""
+authors = ["Thomas Anderson <thomas@heythomasj.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+ipykernel = "^6.29.3"
+openai = "^1.13.3"
+azure-ai-resources = "^1.0.0b7"
+azure-ai-generative = "^1.0.0b7"
+keyrings-alt = "^5.0.0"
+azureml-mlflow = "^1.55.0"
+pytest = "^8.0.2"
+langchain = "^0.1.10"
+langchain-openai = "^0.0.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
