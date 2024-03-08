@@ -21,7 +21,6 @@ client = openai.AsyncAzureOpenAI(
 class Question(BaseModel):
     question: str
 
-
 @app.get("/")
 async def root():
     return {"message": "Hello World"}
@@ -43,28 +42,6 @@ def build_message(input_question: Question):
         }
     ]
     return message_text
-
-
-async def stream_response(user_message):
-    try:
-        stream = await client.chat.completions.create(
-            model="gpt-4",
-            messages=build_message(user_message),
-            temperature=0.7,
-            max_tokens=150,
-            top_p=0.95,
-            frequency_penalty=0.0,
-            presence_penalty=0.0,
-            stop=None,
-            stream=True
-        )
-        async for chunk in stream:
-            print(chunk)
-            yield chunk
-
-    except Exception as e:
-        print(traceback.format_exc())
-        raise HTTPException(status_code=500, detail="Internal Server Error")
 
 @app.post("/gpt-ask")
 async def gpt_ask(input_question: Question):

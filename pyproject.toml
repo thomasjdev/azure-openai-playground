@@ -16,10 +16,12 @@ azureml-mlflow = "^1.55.0"
 pytest = "^8.0.2"
 langchain = "^0.1.10"
 langchain-openai = "^0.0.8"
-jupyter = "^1.0.0"
 python-dotenv = "^1.0.1"
 fastapi = "^0.110.0"
 uvicorn = "^0.27.1"
+jupyter = "^1.0.0"
+pandas = "^2.2.1"
+pdfquery = "^0.4.3"
 
 
 [build-system]
